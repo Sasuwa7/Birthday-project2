@@ -1,0 +1,8 @@
+/* Scène 3 : le vœu s'envole (lanternes) */
+.smoke{position:absolute;bottom:30%;left:50%;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:rgba(255,255,255,.55);filter:blur(10px);opacity:0;animation:smoke 3s ease-out both}
+@keyframes smoke{0%{opacity:.7}100%{opacity:0;transform:translate(var(--sx),-220px) scale(4)}}
+.lantern{position:absolute;bottom:-140px;width:84px;min-height:100px;padding:10px 6px;box-sizing:border-box;
+  background:linear-gradient(#ffb703,#e85d04);color:#3a1500;font-size:13px;font-weight:700;display:grid;place-items:center;
+  box-shadow:0 0 30px 8px rgba(255,160,0,.55);cursor:pointer;animation:lift var(--d) linear forwards,sway 2s ease-in-out infinite alternate}
+@keyframes lift{to{transform:translateY(calc(-100vh - 200px)) rotate(6deg)}}
+.lantern::before{content:"";position:absolute;top:-14px;left:10px;border:solid transparent;border-width:0 32px 14px;border-bottom-color:#e85d04}

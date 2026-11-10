@@ -1,0 +1,39 @@
+/* Scène 2 : le gâteau et ses bougies */
+.kk{position:relative;width:260px;height:240px;margin-top:80px;isolation:isolate}
+.kk::before{content:"";position:absolute;left:50%;top:-70px;width:380px;height:380px;margin-left:-190px;z-index:-1;
+  background:radial-gradient(rgba(255,183,3,.4),transparent 65%);animation:pulse 1s ease-in-out infinite alternate}
+.kk.done::before{display:none}
+.tier::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:#fff6e5;
+  clip-path:polygon(0 0,100% 0,100% 40%,92% 100%,83% 40%,75% 100%,66% 40%,58% 100%,50% 40%,41% 100%,33% 40%,25% 100%,16% 40%,8% 100%,0 40%)}
+.t1{bottom:0;left:0;width:260px;height:80px;background:repeating-linear-gradient(135deg,#f4a261 0 14px,#e8893f 14px 28px)}
+.t2{bottom:80px;left:30px;width:200px;height:64px;background:repeating-linear-gradient(45deg,#e76f51 0 12px,#d85a3c 12px 24px)}
+.t3{bottom:144px;left:60px;width:140px;height:50px;background:linear-gradient(#e0245e,#a4133c)}
+.plate{position:absolute;bottom:-12px;left:-24px;right:-24px;height:14px;background:#94a3b8;clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}
+.candle{position:absolute;bottom:194px;background:repeating-linear-gradient(#fff 0 6px,var(--c1) 6px 12px);transform-origin:50% 100%;cursor:pointer;
+  animation:pop .4s backwards;animation-delay:var(--dl)}
+.candle::after{content:"";position:absolute;inset:-34px -10px 0}
+.sp{position:absolute;width:12px;height:12px;background:var(--c2);pointer-events:none;
+  clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);animation:tw var(--s) ease-in-out infinite alternate}
+@keyframes pop{from{transform:scaleY(0)}}
+.bgtxt{position:absolute;left:0;right:0;top:50%;translate:0 -50%;font-size:clamp(56px,18vw,150px);font-weight:900;line-height:1;
+  color:var(--c1);opacity:.14;z-index:-1;pointer-events:none;transition:opacity 1.2s}
+.bgtxt.on{opacity:.32}
+.tier{position:absolute;overflow:hidden;animation:riseIn .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--dl)}
+.tier::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  transform:translateX(-120%);animation:shine 1.2s ease-out forwards;animation-delay:calc(var(--dl) + .9s)}
+.plate{animation:grow .6s ease-out backwards}
+@keyframes riseIn{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes shine{to{transform:translateX(120%)}}
+@keyframes grow{from{transform:scaleX(0)}}
+.candle{width:10px;height:38px;border-radius:2px 2px 0 0;
+  background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 35%,rgba(255,255,255,.4) 60%,rgba(0,0,0,.22)),repeating-linear-gradient(#fff 0 7px,#e63946 7px 14px)}
+.candle::before{display:none}
+.wick{position:absolute;left:50%;top:-5px;width:2px;height:6px;margin-left:-1px;background:#2b1b12}
+.off .wick{background:#ff5a1f;box-shadow:0 0 6px #ff5a1f;animation:cool 1.6s forwards}
+@keyframes cool{to{background:#2b1b12;box-shadow:none}}
+.gl{position:absolute;left:50%;top:-62px;width:64px;height:64px;margin-left:-32px;pointer-events:none;opacity:0;
+  background:radial-gradient(rgba(255,190,70,.75),transparent 68%)}
+.fl{position:absolute;left:50%;top:-44px;width:22px;height:46px;margin-left:-11px;transform-origin:50% 100%;pointer-events:none;overflow:visible}
+.sg{position:absolute;left:-1px;top:-14px;width:12px;height:12px;border-radius:50%;background:rgba(190,190,205,.6);filter:blur(3px);
+  opacity:0;pointer-events:none;animation:smoke3 2.4s ease-out forwards}
+@keyframes smoke3{0%{opacity:0;translate:0 0;scale:.5}15%{opacity:.7}50%{translate:var(--a) -50px}100%{opacity:0;translate:var(--b) -120px;scale:3}}

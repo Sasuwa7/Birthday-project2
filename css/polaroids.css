@@ -1,0 +1,7 @@
+/* Scène 6 : pluie de polaroïds */
+.pol{position:absolute;left:50%;top:50%;margin:-110px 0 0 -80px;width:160px;background:#fff;padding:8px 8px 30px;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);cursor:pointer;transition:transform .4s;
+  transform:rotate(var(--r)) translate(var(--tx),var(--ty));animation:drop .9s cubic-bezier(.2,1.2,.4,1) backwards;animation-delay:var(--dl)}
+.pol img{width:100%;height:160px;object-fit:cover;display:block}
+.pol.top{z-index:50;transform:rotate(0) scale(1.5)}
+@keyframes drop{from{transform:translateY(-120vh) rotate(0)}}

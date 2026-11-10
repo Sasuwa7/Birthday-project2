@@ -1,0 +1,25 @@
+/* Base : couleurs, mise en page, boutons, confettis, animations communes */
+:root{--bg:#fff4e6;--fg:#3a2a1f;--c1:#e63946;--c2:#ffd166;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1424;--fg:#fff1e0}}
+:root[data-theme="dark"]{--bg:#1b1424;--fg:#fff1e0}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column}
+#stage{flex:1;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center}
+nav{display:flex;gap:10px;align-items:center;justify-content:center;padding:10px;flex-wrap:wrap}
+button,.add{background:var(--c1);color:#fff;border:0;padding:10px 24px;font-size:15px;font-weight:700;letter-spacing:.05em;cursor:pointer;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:transform .15s}button:active,.add:active{transform:scale(.92)}
+.add{background:var(--c2);color:#3a2a1f}
+#dots span{display:inline-block;width:9px;height:9px;transform:rotate(45deg);background:var(--fg);opacity:.25;margin:0 5px}
+#dots span.on{opacity:1}
+.title{font-size:clamp(26px,7vw,54px);font-weight:800;padding:0 12px}
+.hint{opacity:.7}
+.abs{position:absolute;left:0;right:0}
+@keyframes sway{from{translate:-14px 0}to{translate:14px 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{to{transform:scale(1.15);opacity:.6}}
+.shoot{position:absolute;width:140px;height:3px;background:linear-gradient(90deg,transparent,#fff);clip-path:polygon(0 50%,100% 0,100% 100%);rotate:25deg;animation:shoot 1s linear forwards}
+@keyframes shoot{from{translate:0 0;opacity:1}to{translate:420px 200px;opacity:0}}
+body,body *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+img{-webkit-user-drag:none}
+.confetti{position:fixed;width:10px;height:14px;pointer-events:none;z-index:99;animation:fly 1.6s ease-out forwards}
+@keyframes fly{40%{transform:translate(calc(var(--x)*.7),var(--up)) rotate(calc(var(--r)*.5))}to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}

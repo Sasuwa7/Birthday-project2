@@ -1,0 +1,10 @@
+/* Scène 4 : ballons et cartes cadeaux */
+.balloon{position:absolute;bottom:-220px;width:90px;cursor:pointer;animation:floatUp var(--d) linear infinite,sway 2.4s ease-in-out infinite alternate;animation-delay:var(--dl),var(--dl)}
+.b{width:90px;height:112px;background:var(--col);overflow:hidden;padding:5px;box-sizing:border-box;clip-path:polygon(50% 0,92% 20%,100% 58%,68% 100%,32% 100%,0 58%,8% 20%)}
+.b img{width:100%;height:100%;object-fit:cover}
+.balloon i{display:block;width:2px;height:60px;background:var(--fg);opacity:.4;margin:0 auto}
+@keyframes floatUp{to{transform:translateY(calc(-100vh - 300px))}}
+.card{position:absolute;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:60}
+.card>div{background:var(--bg);color:var(--fg);border-radius:18px;padding:14px;width:min(80vw,320px);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.card img{width:100%;height:210px;object-fit:cover;border-radius:12px}
+.card p{font-size:20px;font-weight:700;margin:12px 0}

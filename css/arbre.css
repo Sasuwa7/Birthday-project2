@@ -1,0 +1,5 @@
+/* Scène 7 : l'arbre mystique (photos accrochées aux branches) */
+.fruit{position:absolute;width:48px;height:48px;padding:3px;box-sizing:border-box;background:linear-gradient(135deg,#9fe8ff,#c9a8ff);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);opacity:0;transition:opacity 1.6s,transform .4s;cursor:pointer;animation:bob 4s ease-in-out infinite}
+.fruit img{width:100%;height:100%;object-fit:cover;display:block;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.fruit.big{animation:none;transform:scale(3.4);z-index:20}
+@keyframes bob{50%{transform:translateY(-5px)}}

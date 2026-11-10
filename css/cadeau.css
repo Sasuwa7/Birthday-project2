@@ -1,0 +1,16 @@
+/* Scène 1 : le cadeau */
+.gift{position:relative;width:180px;height:200px;cursor:pointer;animation:wobble 2s ease-in-out infinite}
+.box,.lid{position:absolute;background:var(--c1)}.box{transform-origin:50% 100%}
+.box{bottom:0;left:0;width:180px;height:130px}
+.lid{top:18px;left:-8px;width:196px;height:50px;transition:transform .7s cubic-bezier(.3,1.6,.5,1);transform-origin:left bottom}
+.box::before,.lid::before{content:"";position:absolute;left:50%;width:28px;margin-left:-14px;top:0;height:100%;background:var(--c2)}
+.lid::after{content:"🎀";position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:40px}
+.gift.open{animation:none}
+.gift.open .lid{transform:translate(30px,-90px) rotate(-30deg)}
+@keyframes wobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes squash{30%{transform:scale(1.12,.86)}60%{transform:scale(.94,1.08)}}
+.gift{isolation:isolate}
+.gift::before{content:"";position:absolute;left:50%;top:40%;width:160vmax;height:160vmax;margin:-80vmax 0 0 -80vmax;z-index:-1;pointer-events:none;
+  background:repeating-conic-gradient(rgba(255,209,102,.35) 0 6deg,transparent 6deg 18deg);animation:spin 8s linear infinite;opacity:0;transition:opacity .6s}
+.gift.open::before{opacity:1}
+.gift.open .box{animation:squash .6s}
